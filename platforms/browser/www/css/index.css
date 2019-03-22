@@ -27,6 +27,41 @@ body{
   background-color: #66ccff;
 }
 
+/** Form 
+*-----------------------------------
+*/
+
+.text-input-reg-pass {
+   border: 1px solid #ccc;
+   font-size: 16px;
+   height: 34px;
+   width: 200px;
+   padding-left: 5px;
+   font-family: 'Raleway', sans-serif;
+}
+
+.error-reg{
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  color: #a20e27;
+}
+
+.hpassword{
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  color: #333;
+}
+
+.copyright{
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  color: #fff;
+  margin-top: 100px;
+}
+
 /** Logo 
 *-----------------------------------
 */
@@ -119,15 +154,23 @@ body{
   background: #89bcd6;
 }
 
-.page-content-warning .info{ 
+.page-content-warning .info-warning{ 
   font-size: 14px;
   color: #fff;
 }
 
-.page-content-warning .info i{ 
+.page-content-warning .info-warning i{ 
   font-size: 14px;
   color: #fbcd28;
 }
+
+.page-content-warning .info-warning a{ 
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 .page-content-dashboard span {
   font-family: 'Raleway', sans-serif;
@@ -155,6 +198,112 @@ a.nav-page {
   margin-top: 10px;
   padding: 10px;
 
+}
+
+/** Album 
+*-----------------------------------
+*/
+
+#rig {
+  max-width:900px;
+  margin:0 auto; /*center aligned*/
+  padding:0;
+  font-size:0; /* Remember to change it back to normal font size if have captions */
+  list-style:none;
+  background-color:none;
+}
+#rig li {
+  display:inline-block;
+  *display:inline;/*for IE6 - IE7*/
+  width:25%;
+  vertical-align:middle;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+/* The wrapper for each item */
+.rig-cell {
+  margin:12px;
+  box-shadow:0 1px 4px rgba(0,0,0,0.4);
+  padding:16px;
+  border:none;
+  color:#555;
+  background-color:white;
+  text-decoration:none;
+  text-align:center;
+  display:block;
+  position: relative;
+  overflow:hidden;
+}
+
+.rig-cell h3 {
+  font-size:12px;
+  font-family: 'Raleway', sans-serif;
+  font-weight:normal;
+}
+
+/* If have the image layer */
+.rig-img {
+  display:block;
+  border:none;
+  width:100%;
+  height:0;
+    padding-top:83.461538%;
+    background-size:cover;
+  background-color:white;
+    background-repeat:no-repeat;
+  position:relative; /* Make its pseudo :after to be relative to it. */
+}
+.rig-img:after{
+  position:absolute;
+  top:20px;right:20px;bottom:20px;left:20px;
+  border:1px solid #fff;
+  content:'+';
+  color:white;
+  padding-top:14%;
+  font-size:30px;
+  opacity:0;
+  filter:alpha(opacity=0);
+  transition:all 0.3s;
+  transform:scale(0);
+}
+
+#rig li:hover .rig-img:after {
+  opacity:1;
+  transform:scale(1);
+}
+
+/* If have the overlay layer */
+.rig-overlay {
+  position: absolute;
+  display:block;
+  top:0;left:0;bottom:0;right:0;
+  margin:auto;
+  background:white;
+  background-size:50px 50px;
+  opacity:0;
+  filter:alpha(opacity=0);/*For older IE*/
+  transition:all 0.3s;
+}
+#rig li:hover .rig-overlay {
+  opacity:0.5;
+}
+
+@media (max-width: 9000px) {
+  #rig li {width:25%;}
+}
+
+@media (max-width: 800px) {
+  #rig li {width:33.33%;}
+}
+
+@media (max-width: 500px) {
+  #rig li {width:50%;}
+}
+
+@media (max-width: 350px) {
+  #rig li {width:100%;}
 }
 
 /** Circle 
@@ -303,6 +452,45 @@ a.log-a {
     line-height: 15px;
     color: #fff;
     border-radius: 3px;
+}
+
+.button-close{ 
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+/** Dialog 
+*-----------------------------------
+*/
+
+.dialog-popup{
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  padding: 10px;
+}
+
+.title-nilai{
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.dialog-popup .title{
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 5px;
+  border-top: 1px solid #e2dcdc;
+  padding-top: 5px;
+}
+
+.dialog-popup .content{
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
 }
 
 /** Toolbar 
@@ -568,4 +756,82 @@ a.log-a {
     /* background-image: linear-gradient(#ccc,#ccc),linear-gradient(#ccc,#ccc); */
     background-size: 100% 1px,100% 1px;
     border: none;
+}
+
+/** Box List 
+*-----------------------------------
+*/
+.box-list{
+
+  font-family: 'Raleway', sans-serif;
+  width: 90%; 
+  -webkit-box-shadow: 1px 1px 10px 1px #6E6E6E;
+  box-shadow: 1px 1px 10px 1px #d0d0d0;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  margin: 5px 10px;
+  padding: 10px;
+}
+
+.box-list .title{
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  color: #2b9cd4;
+  padding: 6px;
+}
+
+.box-list .content{
+  font-family: 'Raleway', sans-serif;
+  padding: 6px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #e65c00;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+
+}
+
+.box-list a{
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+
+}
+
+/** Info 
+*-----------------------------------
+*/
+
+.info {
+  padding: 10px;
+  width: 100%;
+}
+
+.info .tanggal{
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.info .judul{
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0c6390;
+}
+
+.info .deskripsi{
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 40px 0;
+}
+
+.info .publish{
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
 }
